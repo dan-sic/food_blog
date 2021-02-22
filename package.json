@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "GATSBY_ACTIVE_ENV=production gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
@@ -15,7 +15,11 @@
   },
   "dependencies": {
     "gatsby": "^2.32.4",
+    "gatsby-image": "^2.11.0",
+    "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-plugin-webfonts": "^1.1.4",
+    "gatsby-source-strapi": "0.0.12",
+    "gatsby-transformer-sharp": "^2.12.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-icons": "^4.2.0"
