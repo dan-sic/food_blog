@@ -1,0 +1,14 @@
+.navheader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navheader__btn {
+  display: none;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: var(--clr-accent-5);
+}

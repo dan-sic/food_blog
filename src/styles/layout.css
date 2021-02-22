@@ -1,0 +1,5 @@
+.section-center {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}

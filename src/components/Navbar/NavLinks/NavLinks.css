@@ -1,0 +1,8 @@
+.nav-links li {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+.nav-links li a {
+  color: var(--clr-accent-5);
+}

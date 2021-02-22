@@ -1,0 +1,44 @@
+.navbar {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-gap: 30rem;
+  padding: 2rem 0;
+}
+
+.navbar__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar__links li {
+  margin: 0 2rem;
+}
+
+.navbar__menu-btn {
+  display: none;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: var(--clr-accent-5);
+}
+
+@media (max-width: 800px) {
+  .navbar__menu-btn {
+    display: inline-block;
+  }
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar {
+    display: block;
+  }
+}
