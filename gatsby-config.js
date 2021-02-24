@@ -37,7 +37,7 @@ module.exports = {
       options: {
         apiURL: process.env.STRAPI_HOST,
         queryLimit: 1000,
-        contentTypes: [`article`],
+        contentTypes: [`article`, `category`],
       },
     },
   ],

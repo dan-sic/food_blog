@@ -2,12 +2,12 @@ import { graphql, useStaticQuery } from "gatsby"
 import React, { useContext, useState } from "react"
 import { Article } from "./Article"
 
-const ArticlesContext = React.createContext<Article[] | undefined>(undefined)
+const ArticlesContext = React.createContext<[Article[]] | undefined>(undefined)
 
 export const ArticlesProvider = props => {
   const data = useStaticQuery(query)
 
-  const articlesData: Article[] = data.allStrapiArticle.nodes.map(
+  const articles: Article[] = data.allStrapiArticle.nodes.map(
     (item: Omit<Article, "slug">) => {
       const article = {
         ...item,
@@ -17,7 +17,7 @@ export const ArticlesProvider = props => {
     }
   )
 
-  return <ArticlesContext.Provider value={[articlesData]} {...props} />
+  return <ArticlesContext.Provider value={[articles]} {...props} />
 }
 
 export const useArticles = () => {
@@ -42,8 +42,8 @@ export const query = graphql`
         }
         image {
           childImageSharp {
-            fluid {
-              src
+            fluid(maxWidth: 1400) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

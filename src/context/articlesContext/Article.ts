@@ -1,3 +1,6 @@
+import { Category } from "../categoriesContext/Category"
+import Image from "gatsby-image"
+
 export interface Article {
   id: string
   title: string
@@ -11,17 +14,6 @@ export interface Article {
 }
 
 interface Tag {
-  id: number
-  name: string
-}
-
-interface Image {
-  childImageSharp: {
-    fluid: {}
-  }
-}
-
-interface Category {
   id: number
   name: string
 }

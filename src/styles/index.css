@@ -3,6 +3,7 @@
 @import "./layout.css";
 
 @import "../components/Navbar/Navbar.css";
+@import "../components/CategoriesGallery/CategoriesGallery.css";
 @import "../components/Navbar/NavLinks/NavLinks.css";
 @import "../components/Navbar/Sidebar/Sidebar.css";
 @import "../components/Navbar/NavHeader/NavHeader.css";
