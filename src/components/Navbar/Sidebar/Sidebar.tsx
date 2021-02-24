@@ -2,6 +2,8 @@ import React from "react"
 import { NavLinks } from "../NavLinks/NavLinks"
 import { AiOutlineClose } from "react-icons/ai"
 import { NavHeder } from "../NavHeader/NavHeder"
+// @ts-ignore
+import logoLarge from "../../../assets/logo-primary-large.svg"
 
 type SidebarProps = {
   isOpen: boolean
@@ -17,7 +19,7 @@ export const Sidebar: React.FunctionComponent<SidebarProps> = ({
   return (
     <aside className={sidebarClasses}>
       <section className="section-center sidebar__section">
-        <NavHeder>
+        <NavHeder logo={logoLarge}>
           <button onClick={() => closeSidebar()} className="sidebar__close-btn">
             <AiOutlineClose />
           </button>

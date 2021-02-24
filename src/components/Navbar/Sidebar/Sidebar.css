@@ -19,6 +19,9 @@
 .sidebar__nav-links li {
   margin: 1rem 0;
 }
+.sidebar__nav-links li a {
+  color: var(--clr-primary-5);
+}
 
 .sidebar__section {
   padding: 2rem 0;
@@ -30,7 +33,7 @@
   border: none;
   font-size: 1.7rem;
   line-height: 1.7;
-  color: var(--clr-accent-5);
+  color: var(--clr-primary-5);
 }
 
 @media (min-width: 800px) {

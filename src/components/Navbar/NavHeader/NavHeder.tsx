@@ -1,10 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 import { StaticRoutes } from "../../../utils/constants/routes"
-// @ts-ignore
-import logo from "../../../assets/logo.svg"
 
-export const NavHeder = ({ children }) => {
+interface NavHeaderProps {
+  logo: string
+}
+
+export const NavHeder: React.FunctionComponent<NavHeaderProps> = ({
+  children,
+  logo,
+}) => {
   return (
     <div className="navheader">
       <Link to={StaticRoutes.HOMEPAGE}>

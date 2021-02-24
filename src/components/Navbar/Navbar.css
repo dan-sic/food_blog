@@ -2,12 +2,15 @@
   display: grid;
   grid-template-columns: 10rem 1fr;
   grid-gap: 30rem;
-  padding: 2rem 0;
+  position: relative;
+  z-index: 10;
+  height: 5rem;
 }
 
 .navbar__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .navbar__links {
@@ -27,7 +30,11 @@
   border: none;
   font-size: 1.7rem;
   line-height: 1.7;
-  color: var(--clr-accent-5);
+  color: var(--clr-white);
+}
+
+.navbar__links li a {
+  color: var(--clr-white);
 }
 
 @media (max-width: 800px) {
