@@ -9,6 +9,7 @@
 @import "../components/Navbar/NavHeader/NavHeader.css";
 @import "../components/Layout/Layout.css";
 @import "../components/Banner/Banner.css";
+@import "../components/Banner/About/About.css";
 @import "../components/ArticlesList/ArticlesList.css";
 @import "../components/ArticlesList/ArticleListItem/ArticleListItem.css";
 @import "./pages/index-page.css";

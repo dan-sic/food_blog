@@ -40,5 +40,12 @@ module.exports = {
         contentTypes: [`article`, `category`],
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/assets/`,
+      },
+    },
   ],
 }
