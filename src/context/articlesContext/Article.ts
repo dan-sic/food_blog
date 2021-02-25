@@ -1,5 +1,5 @@
 import { Category } from "../categoriesContext/Category"
-import Image from "gatsby-image"
+import { Image } from "../shared/models"
 
 export interface Article {
   id: string

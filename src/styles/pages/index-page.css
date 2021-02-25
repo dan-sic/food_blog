@@ -1,0 +1,5 @@
+.index-page__recent-articles {
+  display: grid;
+  grid-template-columns: 60% 30%;
+  grid-gap: 5rem;
+}
