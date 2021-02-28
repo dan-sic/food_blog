@@ -1,6 +1,7 @@
 @import "./base.css";
 @import "./typography.css";
 @import "./layout.css";
+@import "./shared-classes.css";
 
 @import "../components/Navbar/Navbar.css";
 @import "../components/CategoriesGallery/CategoriesGallery.css";
@@ -8,8 +9,10 @@
 @import "../components/Navbar/Sidebar/Sidebar.css";
 @import "../components/Navbar/NavHeader/NavHeader.css";
 @import "../components/Layout/Layout.css";
+@import "../components/Loading/Loading.css";
 @import "../components/Banner/Banner.css";
 @import "../components/Banner/About/About.css";
+@import "../components/Banner/Subscribe/Subscribe.css";
 @import "../components/ArticlesList/ArticlesList.css";
 @import "../components/ArticlesList/ArticleListItem/ArticleListItem.css";
 @import "./pages/index-page.css";
