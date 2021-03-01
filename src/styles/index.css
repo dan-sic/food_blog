@@ -15,4 +15,6 @@
 @import "../components/Banner/Subscribe/Subscribe.css";
 @import "../components/ArticlesList/ArticlesList.css";
 @import "../components/ArticlesList/ArticleListItem/ArticleListItem.css";
+@import "../components/Banner/BannerArticlesList/BannerArticlesList.css";
+@import "../components/Banner/BannerArticlesList/BannerArticleListItem/BannerArticleListItem.css";
 @import "./pages/index-page.css";
