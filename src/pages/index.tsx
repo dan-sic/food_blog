@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout>
       <CategoriesGallery />
-      <section className="section-center index-page__recent-articles">
+      <section className="section-center index-page__main">
         <ArticlesList />
         <Banner />
       </section>

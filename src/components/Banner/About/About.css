@@ -1,23 +1,6 @@
 .about {
-  width: 100%;
-  padding: 2rem;
   display: grid;
   justify-items: center;
-}
-
-.about__heading {
-  display: flex;
-  align-items: center;
-}
-
-.about__heading:before,
-.about__heading:after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 2.5rem;
-  background: var(--clr-primary-5);
-  margin: 1rem;
 }
 
 .about__image {

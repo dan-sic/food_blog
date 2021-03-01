@@ -15,7 +15,10 @@ export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
   const { title, description, image, category, publishDate } = article
   return (
     <article className="article-list-item">
-      <Image fluid={image.childImageSharp.fluid} />
+      <Image
+        className="article-list-item__image"
+        fluid={image.childImageSharp.fluid}
+      />
       <div className="article-list-item__data">
         <h3 className="article-list-item__title">{title}</h3>
         <p>{description}</p>

@@ -17,8 +17,8 @@ export const Subscribe = () => {
   }
 
   return (
-    <div className="subscribe">
-      <h4>Get new posts!</h4>
+    <section className="banner__section subscribe">
+      <h4 className="banner__heading">Get new posts!</h4>
       <p>Subscribe to receive new posts each week</p>
       <form action="" onSubmit={e => onFormSubmit(e)} noValidate>
         <label className="sr-only" htmlFor="email">
@@ -43,6 +43,6 @@ export const Subscribe = () => {
           {submittingFormState ? <Loading /> : "Subscribe"}
         </button>
       </form>
-    </div>
+    </section>
   )
 }

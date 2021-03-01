@@ -1,5 +1,47 @@
 .banner {
   height: 100%;
   width: 100%;
-  /* background-color: blue; */
+  background-color: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+}
+
+@media (max-width: 1100px) {
+  .banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    display: block;
+  }
+}
+
+.banner__heading {
+  display: flex;
+  align-items: center;
+}
+
+.banner__heading:before,
+.banner__heading:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 2.4rem;
+  background: var(--clr-primary-5);
+  margin: 0.5rem;
+}
+
+.banner__section {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.banner__section .banner__heading {
+  align-self: center;
 }

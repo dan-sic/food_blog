@@ -2,18 +2,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-  padding: 2rem;
+  padding: 1rem 0;
   height: 8rem;
 }
 
 .banner-article-list-item__data {
-  /* display: grid;
-  grid-template-rows: 35% 1fr 13%; */
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 .banner-article-list-item__time {
   color: var(--clr-grey-5);
-}
-
-.banner-article-list-item__title {
 }

@@ -3,10 +3,29 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 5rem;
   padding: 2rem;
-  height: 20rem;
+  /* height: 20rem; */
+  background-color: var(--clr-white);
+  margin-bottom: 1rem;
+  box-shadow: var(--dark-shadow);
+  transition: all 0.2s;
+}
+
+@media (max-width: 700px) {
+  .article-list-item {
+    display: block;
+  }
+}
+
+.article-list-item__image {
+  height: 15rem;
+}
+
+.article-list-item:hover {
+  transform: translateY(-0.3rem);
 }
 
 .article-list-item__data {
+  margin-top: 1rem;
   display: grid;
   grid-template-rows: 35% 1fr 13%;
 }

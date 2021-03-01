@@ -53,6 +53,10 @@
   padding: 10px;
 }
 
+.slide-img {
+  height: 100%;
+}
+
 .slide-img::before {
   content: "";
   position: absolute;

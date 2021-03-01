@@ -1,5 +1,13 @@
-.index-page__recent-articles {
+.index-page__main {
   display: grid;
   grid-template-columns: 60% 30%;
   grid-gap: 5rem;
+}
+
+@media (max-width: 1100px) {
+  .index-page__main {
+    display: block;
+    /* grid-template-columns: 60% 30%;
+  grid-gap: 5rem; */
+  }
 }
