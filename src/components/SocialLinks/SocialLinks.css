@@ -1,0 +1,19 @@
+.social-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links--primary svg {
+  color: var(--clr-primary-5);
+}
+
+.social-links svg {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+}
+
+.social-links svg:hover {
+  color: var(--clr-primary-5);
+}

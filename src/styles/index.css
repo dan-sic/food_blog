@@ -11,6 +11,8 @@
 @import "../components/Layout/Layout.css";
 @import "../components/Loading/Loading.css";
 @import "../components/Banner/Banner.css";
+@import "../components/SocialLinks/SocialLinks.css";
+@import "../components/Footer/Footer.css";
 @import "../components/Banner/About/About.css";
 @import "../components/Banner/Subscribe/Subscribe.css";
 @import "../components/ArticlesList/ArticlesList.css";

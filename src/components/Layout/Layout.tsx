@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Footer } from "../Footer/Footer"
 import { Navbar } from "../Navbar/Navbar"
 import { Sidebar } from "../Navbar/Sidebar/Sidebar"
 
@@ -13,6 +14,7 @@ export const Layout = ({ children }) => {
         closeSidebar={() => setIsSidebarOpen(false)}
       />
       {children}
+      <Footer />
     </>
   )
 }

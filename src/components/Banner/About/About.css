@@ -10,11 +10,12 @@
   border: 1px dashed var(--clr-primary-5);
 }
 
-.about__social {
+/* .about__social {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
 .about__social svg {
   margin: 0 0.5rem;
   font-size: 1.5rem;
@@ -23,7 +24,7 @@
 
 .about__social svg:hover {
   color: var(--clr-primary-5);
-}
+} */
 
 .about__description {
   text-align: center;
