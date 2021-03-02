@@ -3,12 +3,22 @@ import { Footer } from "../Footer/Footer"
 import { Navbar } from "../Navbar/Navbar"
 import { Sidebar } from "../Navbar/Sidebar/Sidebar"
 
-export const Layout = ({ children }) => {
+type LayoutProps = {
+  navbarType?: "primary" | "white"
+}
+
+export const Layout: React.FunctionComponent<LayoutProps> = ({
+  children,
+  navbarType = "primary",
+}) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
     <>
-      <Navbar openSidebar={() => setIsSidebarOpen(true)} />
+      <Navbar
+        navbarType={navbarType}
+        openSidebar={() => setIsSidebarOpen(true)}
+      />
       <Sidebar
         isOpen={isSidebarOpen}
         closeSidebar={() => setIsSidebarOpen(false)}

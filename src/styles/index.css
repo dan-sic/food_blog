@@ -2,6 +2,7 @@
 @import "./typography.css";
 @import "./layout.css";
 @import "./shared-classes.css";
+@import "./utils.css";
 
 @import "../components/Navbar/Navbar.css";
 @import "../components/CategoriesGallery/CategoriesGallery.css";
@@ -19,4 +20,4 @@
 @import "../components/ArticlesList/ArticleListItem/ArticleListItem.css";
 @import "../components/Banner/BannerArticlesList/BannerArticlesList.css";
 @import "../components/Banner/BannerArticlesList/BannerArticleListItem/BannerArticleListItem.css";
-@import "./pages/index-page.css";
+@import "../templates/Article/Article.css";

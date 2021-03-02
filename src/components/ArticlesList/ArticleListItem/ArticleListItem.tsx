@@ -12,7 +12,7 @@ interface ArticleListItemProps {
 export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
   article,
 }) => {
-  const { title, description, image, category, publishDate } = article
+  const { title, description, image, category, publishDate, slug } = article
   return (
     <article className="article-list-item">
       <Image
@@ -23,15 +23,13 @@ export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
         <h3 className="article-list-item__title">{title}</h3>
         <p>{description}</p>
         <div className="article-list-item__metadata">
-          <span className="article-list-item__link__category">
-            {category.name}
-          </span>
-          <span className="article-list-item__link__time">
+          <span className="article__category">{category.name}</span>
+          <span className="article__time">
             <AiOutlineClockCircle />
             {publishDate}
           </span>
         </div>
-        <Link className="article-list-item__link" to={"/"}>
+        <Link className="article-list-item__link" to={`/${slug}/`}>
           Continue reading
           <AiOutlineArrowRight />
         </Link>

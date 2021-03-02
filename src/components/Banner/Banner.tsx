@@ -12,3 +12,12 @@ export const Banner = () => {
     </aside>
   )
 }
+
+export const WithBanner = ({ children }) => {
+  return (
+    <main className="section-center mt-l with-banner">
+      {children}
+      <Banner />
+    </main>
+  )
+}

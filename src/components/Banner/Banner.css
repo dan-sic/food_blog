@@ -45,3 +45,17 @@
 .banner__section .banner__heading {
   align-self: center;
 }
+
+.with-banner {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-gap: 4rem;
+}
+
+@media (max-width: 1100px) {
+  .with-banner {
+    display: block;
+    /* grid-template-columns: 60% 30%;
+  grid-gap: 5rem; */
+  }
+}

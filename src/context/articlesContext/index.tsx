@@ -25,7 +25,7 @@ export const useArticles = () => {
 }
 
 function createArticleSlug(articleTitle: string): string {
-  return articleTitle.toLocaleLowerCase().replace(" ", "-")
+  return articleTitle.toLocaleLowerCase().replace(/\s/g, "-")
 }
 
 export const query = graphql`

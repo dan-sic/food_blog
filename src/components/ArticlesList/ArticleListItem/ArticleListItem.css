@@ -59,25 +59,6 @@
   margin-left: 0.7rem;
 }
 
-.article-list-item__link__time {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  color: var(--clr-grey-5);
-}
-.article-list-item__link__time svg {
-  color: var(--clr-grey-5);
-  margin-right: 0.3rem;
-}
-
-.article-list-item__link__category {
-  text-transform: uppercase;
-  padding: 0.3rem;
-  color: var(--clr-grey-3);
-  background-color: hsla(278, 94%, 87%, 0.411);
-  border-radius: var(--radius);
-}
-
 .article-list-item__title:after {
   content: "";
   display: block;
