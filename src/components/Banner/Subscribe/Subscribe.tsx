@@ -26,7 +26,7 @@ export const Subscribe = () => {
         </label>
         <input
           id="email"
-          className="subscribe__input"
+          className="input"
           type="email"
           value={emailValue}
           onChange={e => setEmailValue(e.target.value)}

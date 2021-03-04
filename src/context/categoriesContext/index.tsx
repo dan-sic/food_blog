@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { Category } from "./Category"
 
 const CategoriesContext = React.createContext<[Category[]] | undefined>(
@@ -25,7 +25,7 @@ export const query = graphql`
   {
     allStrapiCategory {
       nodes {
-        id
+        strapiId
         name
         description
         categoryImage {

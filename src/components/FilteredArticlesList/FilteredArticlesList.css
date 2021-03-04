@@ -1,0 +1,22 @@
+.filtered-articles-list__filter {
+  background-color: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.filtered-articles-list__categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filtered-articles-list__categories li {
+  margin-right: 1rem;
+}
+
+.filtered-articles-list__category-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

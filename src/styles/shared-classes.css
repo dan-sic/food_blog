@@ -1,3 +1,36 @@
 .sr-only {
-  display: hidden;
+  visibility: hidden;
+  height: 0;
+  float: left;
+}
+
+.article__tag {
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: var(--clr-accent-4);
+  border-radius: 5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.article__tag:hover {
+  background-color: var(--clr-accent-6);
+}
+
+.article__category {
+  text-transform: uppercase;
+  padding: 0.3rem;
+  color: var(--clr-grey-3);
+  background-color: hsla(278, 94%, 87%, 0.411);
+  border-radius: var(--radius);
+}
+
+.input {
+  background-color: var(--clr-grey-9);
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  border: none;
+  outline: none;
 }

@@ -1,3 +1,9 @@
 .articles {
   width: 100%;
 }
+
+.articles__empty {
+  display: block;
+  margin: 0 auto;
+  width: max-content;
+}

@@ -37,12 +37,12 @@ export const query = graphql`
         id
         title
         tags {
-          name
           id
+          name
         }
         image {
           childImageSharp {
-            fluid(maxWidth: 400) {
+            fluid(maxWidth: 600) {
               ...GatsbyImageSharpFluid
             }
           }

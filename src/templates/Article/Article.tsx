@@ -2,11 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Article } from "../../context/articlesContext/Article"
 import { Layout } from "../../components/Layout/Layout"
-import { WithBanner } from "../../components/Banner/Banner"
+import { Banner, WithBanner } from "../../components/Banner/Banner"
 import Image from "gatsby-image"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import ReactMarkdown from "react-markdown"
-import { AiOutlineMenu } from "react-icons/ai"
+import { About } from "../../components/Banner/About/About"
+import { BannerArticlesList } from "../../components/Banner/BannerArticlesList/BannerArticlesList"
+import { Subscribe } from "../../components/Banner/Subscribe/Subscribe"
 
 export default ({ data }) => {
   const {
@@ -33,10 +35,17 @@ export default ({ data }) => {
           </ReactMarkdown>
           <div className="article__tags">
             {article.tags.map(tag => (
-              <span key={tag.id}>#{tag.name}</span>
+              <span className="article__tag" key={tag.id}>
+                #{tag.name}
+              </span>
             ))}
           </div>
         </article>
+        <Banner>
+          <About />
+          <Subscribe />
+          <BannerArticlesList />
+        </Banner>
       </WithBanner>
     </Layout>
   )
@@ -50,8 +59,8 @@ export const query = graphql`
       id
       title
       tags {
-        name
         id
+        name
       }
       image {
         childImageSharp {

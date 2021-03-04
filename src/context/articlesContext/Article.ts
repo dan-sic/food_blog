@@ -1,4 +1,3 @@
-import { Category } from "../categoriesContext/Category"
 import { Image } from "../shared/models"
 
 export interface Article {
@@ -14,6 +13,11 @@ export interface Article {
 }
 
 interface Tag {
+  id: number
+  name: string
+}
+
+interface Category {
   id: number
   name: string
 }

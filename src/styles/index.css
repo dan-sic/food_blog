@@ -13,9 +13,11 @@
 @import "../components/Loading/Loading.css";
 @import "../components/Banner/Banner.css";
 @import "../components/SocialLinks/SocialLinks.css";
+@import "../components/FilteredArticlesList/FilteredArticlesList.css";
 @import "../components/Footer/Footer.css";
 @import "../components/Banner/About/About.css";
 @import "../components/Banner/Subscribe/Subscribe.css";
+@import "../components/Banner/TagsList/TagsList.css";
 @import "../components/ArticlesList/ArticlesList.css";
 @import "../components/ArticlesList/ArticleListItem/ArticleListItem.css";
 @import "../components/Banner/BannerArticlesList/BannerArticlesList.css";
