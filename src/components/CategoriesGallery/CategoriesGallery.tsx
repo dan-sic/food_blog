@@ -73,7 +73,7 @@ export const CategoriesGallery = () => {
       >
         {categories.map(category => (
           <div
-            key={category.id}
+            key={category.strapiId}
             className="slide"
             style={{
               width: `${100 / categories.length}%`,

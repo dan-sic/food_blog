@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { ArticleListItem } from "./ArticleListItem/ArticleListItem"
 import { Article } from "../../context/articlesContext/Article"
 
@@ -10,15 +10,34 @@ export const ArticlesList: React.FunctionComponent<ArticlesListProps> = ({
   articles,
 }) => {
   const noArticlesFound = articles.length === 0
+  const pageSize = 1
+  const articlesCount = articles.length
+  const [articlesDisplayed, setArticlesDisplayed] = useState(pageSize)
+  const showLoadMoreBtn = articlesDisplayed < articlesCount
 
   return (
     <div className="articles">
       {noArticlesFound ? (
         <span className="articles__empty">No articles found</span>
       ) : (
-        articles.map(article => (
-          <ArticleListItem key={article.id} article={article} />
-        ))
+        articles
+          .slice(0, articlesDisplayed)
+          .map(article => (
+            <ArticleListItem key={article.id} article={article} />
+          ))
+      )}
+      {showLoadMoreBtn && (
+        <button
+          type="button"
+          className="button"
+          onClick={() =>
+            setArticlesDisplayed(
+              articlesDisplayed => articlesDisplayed + pageSize
+            )
+          }
+        >
+          Show more
+        </button>
       )}
     </div>
   )
