@@ -1,0 +1,14 @@
+.notification-snack {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--clr-white);
+}
+
+.notification-snack--success {
+  background-color: var(--clr-green-dark);
+}
+
+.notification-snack--error {
+  background-color: var(--clr-red-dark);
+}

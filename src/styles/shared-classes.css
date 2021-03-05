@@ -34,3 +34,18 @@
   border: none;
   outline: none;
 }
+
+.button {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  padding: 1rem;
+  background-color: var(--clr-primary-5);
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.button:hover {
+  background-color: var(--clr-primary-3);
+}

@@ -35,11 +35,7 @@ export const Subscribe = () => {
         {subscriptionFeedbackMessage && (
           <span>{subscriptionFeedbackMessage.message}</span>
         )}
-        <button
-          className="subscribe__submit-btn"
-          type="submit"
-          disabled={submittingFormState}
-        >
+        <button className="button" type="submit" disabled={submittingFormState}>
           {submittingFormState ? <Loading /> : "Subscribe"}
         </button>
       </form>

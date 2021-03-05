@@ -1,21 +1,4 @@
 .subscribe {
   width: 100%;
   padding: 2rem;
-  /* border-top: 4px solid var(--clr-primary-5); */
-}
-
-.subscribe__submit-btn {
-  display: block;
-  width: 100%;
-  text-transform: uppercase;
-  color: var(--clr-white);
-  padding: 1rem;
-  outline: none;
-  border: none;
-  background-color: var(--clr-primary-5);
-  transition: all 0.2s;
-  margin-top: 0.5rem;
-}
-.subscribe__submit-btn:hover {
-  background-color: var(--clr-primary-3);
 }
