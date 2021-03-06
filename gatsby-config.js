@@ -22,10 +22,10 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "Roboto",
+              family: "Nunito Sans",
             },
             {
-              family: "Lora",
+              family: "Playfair Display",
               variants: ["400", "700"],
             },
           ],

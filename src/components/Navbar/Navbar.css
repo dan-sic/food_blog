@@ -37,6 +37,7 @@
 .navbar__menu-btn--primary {
   color: var(--clr-primary-5);
 }
+
 .navbar__menu-btn--white {
   color: var(--clr-white);
 }
@@ -45,8 +46,24 @@
   color: var(--clr-primary-5);
 }
 
+.navbar__links--primary li:hover {
+  border-bottom: 2px solid var(--clr-primary-5);
+}
+
+.navbar__links--primary li.nav-links__active-link {
+  border-bottom: 3px solid var(--clr-primary-5);
+}
+
 .navbar__links--white li a {
   color: var(--clr-white);
+}
+
+.navbar__links--white li:hover {
+  border-bottom: 2px solid var(--clr-white);
+}
+
+.navbar__links--white li.nav-links__active-link {
+  border-bottom: 3px solid var(--clr-white);
 }
 
 .navbar__nav {
