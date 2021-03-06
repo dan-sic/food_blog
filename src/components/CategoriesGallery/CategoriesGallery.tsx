@@ -3,6 +3,8 @@ import { AiOutlineLeft } from "react-icons/ai"
 import { AiOutlineRight } from "react-icons/ai"
 import Image from "gatsby-image"
 import { useCategories } from "../../context/categoriesContext"
+import { Link } from "gatsby"
+import { StaticRoutes } from "../../utils/constants/routes"
 
 export const CategoriesGallery = () => {
   const [categories] = useCategories()
@@ -83,10 +85,14 @@ export const CategoriesGallery = () => {
               className="slide-img"
               fluid={category.categoryImage.childImageSharp.fluid}
             />
-            <div className="slide-text">
-              <h3>{category.name}</h3>
-              <h4>{category.description}</h4>
-            </div>
+            <Link
+              to={`${StaticRoutes.ARTICLES}?categoryId=${category.strapiId}`}
+            >
+              <div className="slide-text">
+                <h2>{category.name}</h2>
+                <h3>{category.description}</h3>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

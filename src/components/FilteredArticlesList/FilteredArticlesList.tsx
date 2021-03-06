@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useCategories } from "../../context/categoriesContext/index"
 import { ArticlesList } from "../ArticlesList/ArticlesList"
 import { useArticles } from "../../context/articlesContext/index"
@@ -10,12 +10,25 @@ import {
   useArticlesFiltersDispatch,
   useArticlesFiltersState,
 } from "../../context/articlesFiltersContext/index"
+import { useLocation } from "@reach/router"
+import queryString from "query-string"
 
 export const FilteredArticlesList = () => {
   const [categories] = useCategories()
   const [articles] = useArticles()
   const articlesFilters = useArticlesFiltersState()
   const dispatch = useArticlesFiltersDispatch()
+  const location = useLocation()
+
+  useEffect(() => {
+    if (!location.search) return
+
+    const queryParams = queryString.parse(location.search)
+
+    if (queryParams.categoryId) {
+      dispatch(setCategoryFilter(Number(queryParams.categoryId)))
+    }
+  }, [])
 
   return (
     <section>
