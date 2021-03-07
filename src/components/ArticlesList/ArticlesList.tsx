@@ -29,7 +29,7 @@ export const ArticlesList: React.FunctionComponent<ArticlesListProps> = ({
       {showLoadMoreBtn && (
         <button
           type="button"
-          className="button"
+          className="button articles__pagination-btn"
           onClick={() =>
             setArticlesDisplayed(
               articlesDisplayed => articlesDisplayed + pageSize

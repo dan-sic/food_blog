@@ -15,6 +15,7 @@ export default function Home() {
   return (
     <Layout navbarType="white">
       <CategoriesGallery />
+      <h3 className="page-heading">Recent articles</h3>
       <WithBanner>
         <ArticlesList articles={articles} />
         <Banner>

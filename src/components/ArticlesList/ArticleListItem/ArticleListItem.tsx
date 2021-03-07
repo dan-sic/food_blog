@@ -4,6 +4,7 @@ import { AiOutlineArrowRight } from "react-icons/ai"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import Image from "gatsby-image"
 import { Link } from "gatsby"
+import { StaticRoutes } from "../../../utils/constants/routes"
 
 interface ArticleListItemProps {
   article: Article
@@ -12,7 +13,8 @@ interface ArticleListItemProps {
 export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
   article,
 }) => {
-  const { title, description, image, category, publishDate, slug } = article
+  const { title, image, category, publishDate, slug, body } = article
+
   return (
     <article className="article-list-item">
       <Image
@@ -20,10 +22,16 @@ export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
         fluid={image.childImageSharp.fluid}
       />
       <div className="article-list-item__data">
-        <h3 className="article-list-item__title">{title}</h3>
-        <p>{description}</p>
+        <Link to={`/${slug}/`}>
+          <h3 className="article-list-item__title">{title}</h3>
+        </Link>
+        <p>{body.slice(0, 250) + "..."}</p>
         <div className="article-list-item__metadata">
-          <span className="article__category">{category.name}</span>
+          <Link
+            to={`${StaticRoutes.ARTICLES}?categoryId=${article.category.id}`}
+          >
+            <span className="article__category">{category.name}</span>
+          </Link>
           <span className="article__time">
             <AiOutlineClockCircle />
             {publishDate}

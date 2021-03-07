@@ -4,7 +4,6 @@ export interface Article {
   id: string
   title: string
   body: string
-  description: string
   tags: Tag[]
   image: Image
   category: Category
