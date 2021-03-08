@@ -110,7 +110,7 @@ export const useContactForm = (): [
 
 const uploadContactForm = async (contactForm: ContactForm) => {
   const { name, email, message } = contactForm
-  fetch("https://email-service966.herokuapp.com/email", {
+  return fetch("https://email-service966.herokuapp.com/email", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

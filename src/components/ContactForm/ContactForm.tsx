@@ -14,8 +14,6 @@ export const ContactForm = () => {
 
   return (
     <section className="contact-form">
-      <h1>Contact</h1>
-      <h4>Questions? Comments? Fill the form below to send me a message!</h4>
       <form onSubmit={sendFormData}>
         <fieldset>
           <div className="contact-form__form">
@@ -29,7 +27,11 @@ export const ContactForm = () => {
                 value={contactForm.name.value}
                 onChange={onUpdateContactForm}
               />
-              {contactForm.name.error && <span>{contactForm.name.error}</span>}
+              {contactForm.name.error && (
+                <span className="validation-error-msg">
+                  {contactForm.name.error}
+                </span>
+              )}
             </label>
 
             <label htmlFor="email">
@@ -43,7 +45,9 @@ export const ContactForm = () => {
                 onChange={onUpdateContactForm}
               />
               {contactForm.email.error && (
-                <span>{contactForm.email.error}</span>
+                <span className="validation-error-msg">
+                  {contactForm.email.error}
+                </span>
               )}
             </label>
             <label htmlFor="message">
@@ -58,10 +62,16 @@ export const ContactForm = () => {
                 onChange={onUpdateContactForm}
               ></textarea>
               {contactForm.message.error && (
-                <span>{contactForm.message.error}</span>
+                <span className="validation-error-msg">
+                  {contactForm.message.error}
+                </span>
               )}
             </label>
-            <button type="submit" className="button">
+            <button
+              type="submit"
+              className="button"
+              disabled={submittingFormState}
+            >
               {submittingFormState ? <Loading /> : "Send"}
             </button>
             <div className="contact-form__notification-snack">

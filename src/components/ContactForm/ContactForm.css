@@ -2,6 +2,8 @@
   background-color: var(--clr-white);
   box-shadow: var(--dark-shadow);
   padding: 2rem;
+  align-self: start;
+  margin-bottom: 3rem;
 }
 
 .contact-form__form {
@@ -21,7 +23,7 @@
     display: block;
   }
 
-  .contact-form__form label input {
+  .contact-form__form label {
     margin-bottom: 2rem;
   }
 }
