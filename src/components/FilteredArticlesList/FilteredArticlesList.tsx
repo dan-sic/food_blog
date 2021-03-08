@@ -13,9 +13,11 @@ import {
 import { useLocation } from "@reach/router"
 import queryString from "query-string"
 import { setTagFilter } from "../../context/articlesFiltersContext/index"
+import { useTags } from "../../context/tagsContext"
 
 export const FilteredArticlesList = () => {
   const [categories] = useCategories()
+  const [tags] = useTags()
   const [articles] = useArticles()
   const articlesFilters = useArticlesFiltersState()
   const dispatch = useArticlesFiltersDispatch()
@@ -35,8 +37,24 @@ export const FilteredArticlesList = () => {
     }
   }, [])
 
+  const getFilterLabel = () => {
+    if (articlesFilters.text) {
+      return `Displaying articles by phrase: ${articlesFilters.text}`
+    } else if (articlesFilters.categoryId) {
+      const categoryName = categories.find(
+        c => c.strapiId === articlesFilters.categoryId
+      ).name
+      return `Displaying articles by category: ${categoryName}`
+    } else if (articlesFilters.tagId) {
+      const tagName = tags.find(t => t.strapiId === articlesFilters.tagId).name
+      return `Displaying articles by tag: #${tagName}`
+    } else {
+      return "Displaying all articles"
+    }
+  }
+
   return (
-    <section>
+    <section className="filtered-articles-list">
       <div className="filtered-articles-list__filter">
         <ul className="filtered-articles-list__categories">
           <li>
@@ -72,6 +90,7 @@ export const FilteredArticlesList = () => {
           placeholder="Type to filter articles..."
         />
       </div>
+      <h3 className="page-heading">{getFilterLabel()}</h3>
       <ArticlesList articles={filterArticles(articlesFilters, articles)} />
     </section>
   )

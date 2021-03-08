@@ -1,22 +1,20 @@
-import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import {
   setTagFilter,
   useArticlesFiltersDispatch,
 } from "../../../context/articlesFiltersContext"
-import { Tag } from "../../../models/Tag"
+import { useTags } from "../../../context/tagsContext"
 
 export const TagsList = () => {
-  const data = useStaticQuery(query)
   const dispatch = useArticlesFiltersDispatch()
-  const tags: Tag[] = data.allStrapiTag.nodes
+  const [tags] = useTags()
 
   return (
     <section className="banner__section tags">
       <h4 className="banner__heading">Tags</h4>
       <ul className="tags__list">
         {tags.map(tag => (
-          <ul key={tag.strapiId}>
+          <li key={tag.strapiId}>
             <button
               className="article__tag tags__tag-btn"
               type="button"
@@ -24,20 +22,9 @@ export const TagsList = () => {
             >
               #{tag.name}
             </button>
-          </ul>
+          </li>
         ))}
       </ul>
     </section>
   )
 }
-
-const query = graphql`
-  {
-    allStrapiTag {
-      nodes {
-        strapiId
-        name
-      }
-    }
-  }
-`

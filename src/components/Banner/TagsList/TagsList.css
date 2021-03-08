@@ -14,7 +14,9 @@
 
 .tags__list {
   text-align: initial;
+  display: flex;
+  flex-wrap: wrap;
 }
-.tags__list ul {
-  margin-bottom: 0.5rem;
+.tags__list li {
+  margin: 0.2rem;
 }
