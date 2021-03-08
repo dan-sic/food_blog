@@ -1,6 +1,8 @@
 import React from "react"
 import { Article } from "../../../../context/articlesContext/Article"
 import Image from "gatsby-image"
+import { Link } from "gatsby"
+import { StaticRoutes } from "../../../../utils/constants/routes"
 
 interface ArticleListItemProps {
   article: Article
@@ -9,14 +11,16 @@ interface ArticleListItemProps {
 export const BannerArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
   article,
 }) => {
-  const { title, image, publishDate } = article
+  const { title, image, publishDate, slug } = article
   return (
-    <article className="banner-article-list-item">
-      <Image fluid={image.childImageSharp.fluid} />
-      <div className="banner-article-list-item__data">
-        <h4 className="banner-article-list-item__title">{title}</h4>
-        <span className="banner-article-list-item__time">{publishDate}</span>
-      </div>
-    </article>
+    <Link to={`${StaticRoutes.ARTICLES}/${slug}`}>
+      <article className="banner-article-list-item">
+        <Image fluid={image.childImageSharp.fluid} />
+        <div className="banner-article-list-item__data">
+          <h5 className="banner-article-list-item__title">{title}</h5>
+          <span className="banner-article-list-item__time">{publishDate}</span>
+        </div>
+      </article>
+    </Link>
   )
 }

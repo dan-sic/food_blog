@@ -22,7 +22,7 @@ export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
         fluid={image.childImageSharp.fluid}
       />
       <div className="article-list-item__data">
-        <Link to={`/${slug}/`}>
+        <Link to={`${StaticRoutes.ARTICLES}/${slug}`}>
           <h3 className="article-list-item__title">{title}</h3>
         </Link>
         <p>{body.slice(0, 250) + "..."}</p>

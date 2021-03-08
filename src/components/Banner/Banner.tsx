@@ -5,5 +5,5 @@ export const Banner = ({ children }) => {
 }
 
 export const WithBanner = ({ children }) => {
-  return <main className="section-center mt-l with-banner">{children}</main>
+  return <main className="section-center with-banner">{children}</main>
 }
