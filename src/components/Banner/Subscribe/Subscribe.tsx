@@ -1,19 +1,22 @@
 import React, { useState } from "react"
 import { Loading } from "../../Loading/Loading"
 import { useSubscribe } from "./hooks/useSubscribe"
+import { NotificationSnack } from "../../NotificationSnack/NotificationSnack"
 
 export const Subscribe = () => {
   const [emailValue, setEmailValue] = useState("")
   const [
     subscribe,
     subscriptionFeedbackMessage,
+    validationErrorMessage,
     submittingFormState,
   ] = useSubscribe()
 
-  const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    subscribe(emailValue)
+    await subscribe(emailValue)
+    setEmailValue("")
   }
 
   return (
@@ -32,12 +35,17 @@ export const Subscribe = () => {
           onChange={e => setEmailValue(e.target.value)}
           placeholder="Your email"
         />
-        {subscriptionFeedbackMessage && (
-          <span>{subscriptionFeedbackMessage.message}</span>
+        {validationErrorMessage && (
+          <span className="validation-error-msg">{validationErrorMessage}</span>
         )}
         <button className="button" type="submit" disabled={submittingFormState}>
           {submittingFormState ? <Loading /> : "Subscribe"}
         </button>
+        {subscriptionFeedbackMessage && (
+          <NotificationSnack type={subscriptionFeedbackMessage.type}>
+            {subscriptionFeedbackMessage.message}
+          </NotificationSnack>
+        )}
       </form>
     </section>
   )

@@ -3,8 +3,12 @@ import { useState } from "react"
 export const useSubscribe = (): [
   SubscribeFn,
   SubscriptionFeedbackMessage,
+  string,
   boolean
 ] => {
+  const [validationErrorMessage, setValidationErrorMessage] = useState<string>(
+    null
+  )
   const [
     subscriptionFeedbackMessage,
     setSubscriptionFeedbackMessage,
@@ -15,10 +19,7 @@ export const useSubscribe = (): [
     const isValidEmail = /^[^@]+@[^@]+\.[^@]+$/.test(email)
 
     if (!isValidEmail) {
-      setSubscriptionFeedbackMessage({
-        message: "Please provide a valid email",
-        type: "error",
-      })
+      setValidationErrorMessage("Please provide a valid email")
       return
     }
 
@@ -36,6 +37,7 @@ export const useSubscribe = (): [
         type: "error",
       })
     } finally {
+      setValidationErrorMessage(null)
       setSubmittingFormState(false)
 
       setTimeout(() => {
@@ -44,11 +46,16 @@ export const useSubscribe = (): [
     }
   }
 
-  return [subscribe, subscriptionFeedbackMessage, submittingFormState]
+  return [
+    subscribe,
+    subscriptionFeedbackMessage,
+    validationErrorMessage,
+    submittingFormState,
+  ]
 }
 
 const makeSubscribeRequest = async (email: string) => {
-  fetch("https://email-service966.herokuapp.com/email", {
+  return fetch("https://email-service966.herokuapp.com/email", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
