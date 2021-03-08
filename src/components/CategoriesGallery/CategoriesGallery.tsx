@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useLayoutEffect, useState } from "react"
 import { AiOutlineLeft } from "react-icons/ai"
 import { AiOutlineRight } from "react-icons/ai"
 import Image from "gatsby-image"
 import { useCategories } from "../../context/categoriesContext"
 import { Link } from "gatsby"
 import { StaticRoutes } from "../../utils/constants/routes"
+import { useInterval } from "./hooks/useInterval"
 
 export const CategoriesGallery = () => {
   const [categories] = useCategories()
@@ -16,33 +17,35 @@ export const CategoriesGallery = () => {
     width: 0,
   })
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setSliderState(state => ({
       ...state,
       width: window.innerWidth,
     }))
-
-    setInterval(() => {
-      nextSlide()
-    }, 10000)
   }, [])
 
+  useInterval(() => {
+    nextSlide()
+  }, 10000)
+
   const nextSlide = () => {
-    if (sliderState.activeSlideIndex === categories.length - 1) {
-      setSliderState(state => ({
-        ...state,
-        activeSlideIndex: 0,
-        translate: 0,
-        transitionSpeed: 0,
-      }))
-    } else {
-      setSliderState(state => ({
-        ...state,
-        activeSlideIndex: state.activeSlideIndex + 1,
-        translate: (state.activeSlideIndex + 1) * sliderState.width,
-        transitionSpeed: 0.3,
-      }))
-    }
+    setSliderState(state => {
+      if (state.activeSlideIndex === categories.length - 1) {
+        return {
+          ...state,
+          activeSlideIndex: 0,
+          translate: 0,
+          transitionSpeed: 0,
+        }
+      } else {
+        return {
+          ...state,
+          activeSlideIndex: state.activeSlideIndex + 1,
+          translate: (state.activeSlideIndex + 1) * sliderState.width,
+          transitionSpeed: 0.3,
+        }
+      }
+    })
   }
 
   const previousSlide = () => {
