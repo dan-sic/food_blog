@@ -12,6 +12,7 @@ import {
 } from "../../context/articlesFiltersContext/index"
 import { useLocation } from "@reach/router"
 import queryString from "query-string"
+import { setTagFilter } from "../../context/articlesFiltersContext/index"
 
 export const FilteredArticlesList = () => {
   const [categories] = useCategories()
@@ -27,6 +28,10 @@ export const FilteredArticlesList = () => {
 
     if (queryParams.categoryId) {
       dispatch(setCategoryFilter(Number(queryParams.categoryId)))
+    }
+
+    if (queryParams.tagId) {
+      dispatch(setTagFilter(Number(queryParams.tagId)))
     }
   }, [])
 

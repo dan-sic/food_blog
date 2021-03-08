@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { Article } from "../../context/articlesContext/Article"
 import { Layout } from "../../components/Layout/Layout"
 import { Banner, WithBanner } from "../../components/Banner/Banner"
@@ -9,6 +9,7 @@ import ReactMarkdown from "react-markdown"
 import { About } from "../../components/Banner/About/About"
 import { BannerArticlesList } from "../../components/Banner/BannerArticlesList/BannerArticlesList"
 import { Subscribe } from "../../components/Banner/Subscribe/Subscribe"
+import { StaticRoutes } from "../../utils/constants/routes"
 
 export default ({ data }) => {
   const {
@@ -17,17 +18,26 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <WithBanner>
+      <WithBanner className="mt-md">
         <article className="article">
           <header className="article__header">
-            <Image fluid={article.image.childImageSharp.fluid} />
+            <Image
+              className="article__img"
+              fluid={article.image.childImageSharp.fluid}
+            />
             <div className="article__data">
               <h2 className="article__title">{article.title}</h2>
-              <div className="article__time">
+              <span className="article__time">
                 <AiOutlineClockCircle />
                 {article.publishDate}
-              </div>
-              <span className="article__category">{article.category.name}</span>
+              </span>
+              <Link
+                to={`${StaticRoutes.ARTICLES}?categoryId=${article.category.id}`}
+              >
+                <span className="article__category">
+                  {article.category.name}
+                </span>
+              </Link>
             </div>
           </header>
           <ReactMarkdown className="article__content">
@@ -35,9 +45,12 @@ export default ({ data }) => {
           </ReactMarkdown>
           <div className="article__tags">
             {article.tags.map(tag => (
-              <span className="article__tag" key={tag.id}>
-                #{tag.name}
-              </span>
+              <Link
+                key={tag.id}
+                to={`${StaticRoutes.ARTICLES}?tagId=${tag.id}`}
+              >
+                <span className="article__tag">#{tag.name}</span>
+              </Link>
             ))}
           </div>
         </article>

@@ -1,5 +1,5 @@
 .banner {
-  height: 100%;
+  align-self: start;
   width: 100%;
   background-color: var(--clr-white);
   box-shadow: var(--dark-shadow);
@@ -55,7 +55,5 @@
 @media (max-width: 1100px) {
   .with-banner {
     display: block;
-    /* grid-template-columns: 60% 30%;
-  grid-gap: 5rem; */
   }
 }

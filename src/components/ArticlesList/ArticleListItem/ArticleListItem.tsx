@@ -37,7 +37,10 @@ export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
             {publishDate}
           </span>
         </div>
-        <Link className="article-list-item__link" to={`/${slug}/`}>
+        <Link
+          className="article-list-item__link"
+          to={`${StaticRoutes.ARTICLES}/${slug}`}
+        >
           Continue reading
           <AiOutlineArrowRight />
         </Link>
