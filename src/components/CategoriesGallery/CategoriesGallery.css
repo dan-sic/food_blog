@@ -61,10 +61,18 @@
 @media (max-width: 800px) {
   .slide-text {
     transform: translateX(-50%);
-    top: 60%;
+    width: 80%;
+    top: 70%;
     left: 50%;
     align-items: center;
     text-align: center;
+  }
+
+  .slide-text h2 {
+    font-size: 1.5rem;
+  }
+  .slide-text h3 {
+    font-size: 1rem;
   }
 }
 

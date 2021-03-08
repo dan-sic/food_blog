@@ -10,7 +10,7 @@ import { ArticlesFiltersProvider } from "../context/articlesFiltersContext"
 export default function Articles() {
   return (
     <Layout>
-      <WithBanner>
+      <WithBanner className="mt-md">
         <ArticlesFiltersProvider>
           <FilteredArticlesList />
           <Banner>

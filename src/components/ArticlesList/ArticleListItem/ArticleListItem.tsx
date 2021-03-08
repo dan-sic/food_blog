@@ -32,7 +32,7 @@ export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
           >
             <span className="article__category">{category.name}</span>
           </Link>
-          <span className="article__time">
+          <span className="article__time article-list-item__time">
             <AiOutlineClockCircle />
             {publishDate}
           </span>

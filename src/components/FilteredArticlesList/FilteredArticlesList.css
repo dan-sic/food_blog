@@ -1,3 +1,7 @@
+.filtered-articles-list {
+  margin-bottom: 3rem;
+}
+
 .filtered-articles-list__filter {
   background-color: var(--clr-white);
   box-shadow: var(--dark-shadow);
@@ -13,6 +17,7 @@
 
 .filtered-articles-list__categories li {
   margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .filtered-articles-list__category-btn {

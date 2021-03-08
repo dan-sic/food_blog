@@ -9,6 +9,9 @@ import { ContactForm } from "../components/ContactForm/ContactForm"
 export default function Contact() {
   return (
     <Layout>
+      <h3 className="page-heading">
+        Questions? Comments? Fill the form below to send me a message!
+      </h3>
       <WithBanner>
         <ContactForm />
         <Banner>

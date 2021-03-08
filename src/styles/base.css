@@ -25,6 +25,8 @@
   --clr-primary-10: hsl(278, 100%, 94%);
   /* background color */
   --clr-background: #fff3e6;
+  /* --clr-background: #f7d5b1;
+  --clr-background: #d4ca8f; */
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
   --clr-grey-3: hsl(209, 34%, 30%);
@@ -39,8 +41,8 @@
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-white: #fff;
-  --ff-primary: "Lora", sans-serif;
-  --ff-secondary: "Roboto", sans-serif;
+  --ff-primary: "Playfair Display", sans-serif;
+  --ff-secondary: "Nunito Sans", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.2rem;
   --radius: 0.25rem;
@@ -61,11 +63,62 @@
 
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-background);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 1rem;
-  /* margin-top: 5rem; */
+  background: radial-gradient(
+        1.5em 6.28571em at 1.95em,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.25) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      0 0,
+    radial-gradient(
+        1.5em 6.28571em at -0.45em,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.25) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      1.5em 5.5em,
+    radial-gradient(
+        2.3em 4.57143em at 2.99em,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.3) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      0 0,
+    radial-gradient(
+        2.3em 4.57143em at -0.69em,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.3) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      2.3em 4em,
+    radial-gradient(
+        3.5em 6.28571em at 4.55em,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.25) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      0 0,
+    radial-gradient(
+        3.5em 6.28571em at -1.05em,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.25) 55%,
+        rgba(255, 255, 255, 0) 55%
+      )
+      3.5em 5.5em,
+    radial-gradient(#faf1e9, #f2e4d4);
+  background-color: var(--clr-background);
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em,
+    3.5em 11em, 100% 100%;
+  background-repeat: repeat;
 }
 
 ul {
@@ -74,6 +127,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 button {
@@ -84,6 +138,16 @@ button {
 
 input {
   font-size: inherit;
+  font-family: inherit;
+}
+
+label {
+  display: block;
+}
+
+textarea {
+  font-size: inherit;
+  font-family: inherit;
 }
 
 fieldset {

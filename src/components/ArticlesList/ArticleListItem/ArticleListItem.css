@@ -70,6 +70,11 @@
   .article-list-item__title {
     margin-bottom: 1rem;
   }
+
+  .article-list-item__time {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
 }
 
 .article-list-item__title:after {

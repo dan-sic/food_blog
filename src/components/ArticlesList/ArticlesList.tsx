@@ -10,7 +10,7 @@ export const ArticlesList: React.FunctionComponent<ArticlesListProps> = ({
   articles,
 }) => {
   const noArticlesFound = articles.length === 0
-  const pageSize = 1
+  const pageSize = 5
   const articlesCount = articles.length
   const [articlesDisplayed, setArticlesDisplayed] = useState(pageSize)
   const showLoadMoreBtn = articlesDisplayed < articlesCount
