@@ -1,0 +1,6 @@
+.not-found {
+  height: 65vh;
+  text-align: center;
+  padding-top: 5rem;
+  color: var(--clr-primary-5);
+}
