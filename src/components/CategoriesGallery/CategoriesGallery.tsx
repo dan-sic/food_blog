@@ -6,9 +6,11 @@ import { useCategories } from "../../context/categoriesContext"
 import { Link } from "gatsby"
 import { StaticRoutes } from "../../utils/constants/routes"
 import { useInterval } from "./hooks/useInterval"
+import { useRef } from "react"
 
 export const CategoriesGallery = () => {
   const [categories] = useCategories()
+  const ref = useRef<HTMLElement>()
 
   const [sliderState, setSliderState] = useState({
     translate: 0,
@@ -20,7 +22,7 @@ export const CategoriesGallery = () => {
   useLayoutEffect(() => {
     setSliderState(state => ({
       ...state,
-      width: window.innerWidth,
+      width: ref.current.offsetWidth,
     }))
   }, [])
 
@@ -67,7 +69,7 @@ export const CategoriesGallery = () => {
   }
 
   return (
-    <header className="categories-gallery">
+    <header ref={ref} className="categories-gallery">
       <div
         className="categories-gallery__container"
         style={{
@@ -86,7 +88,9 @@ export const CategoriesGallery = () => {
           >
             <Image
               className="slide-img"
-              fluid={category.categoryImage.childImageSharp.fluid}
+              fluid={{
+                ...category.categoryImage.childImageSharp.fluid,
+              }}
             />
             <Link
               to={`${StaticRoutes.ARTICLES}?categoryId=${category.strapiId}`}
@@ -103,6 +107,7 @@ export const CategoriesGallery = () => {
         className="categories-gallery__prev-btn"
         role="button"
         onClick={() => previousSlide()}
+        aria-label="Previous image"
       >
         <AiOutlineLeft />
       </div>
@@ -110,6 +115,7 @@ export const CategoriesGallery = () => {
         className="categories-gallery__next-btn"
         role="button"
         onClick={() => nextSlide()}
+        aria-label="Next image"
       >
         <AiOutlineRight />
       </div>
