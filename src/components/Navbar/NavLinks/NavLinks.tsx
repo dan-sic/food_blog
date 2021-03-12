@@ -10,7 +10,7 @@ export const NavLinks: React.FunctionComponent<NavLinksProps> = ({
   className,
 }) => {
   let pathname: string
-  if (window) {
+  if (typeof window !== `undefined`) {
     pathname = window.location.pathname
   }
 

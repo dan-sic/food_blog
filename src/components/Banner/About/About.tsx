@@ -3,9 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Image } from "../../../context/shared/models"
 import Img from "gatsby-image"
 import { SocialLinks } from "../../SocialLinks/SocialLinks"
-// import { AiFillFacebook } from "react-icons/ai"
-// import { AiFillTwitterCircle } from "react-icons/ai"
-// import { AiOutlineInstagram } from "react-icons/ai"
 
 export const About = () => {
   const data: { file: Image } = useStaticQuery(query)
@@ -19,11 +16,6 @@ export const About = () => {
           coffee. Don't hesitate to come for say a small "hello!"
         </p>
         <SocialLinks />
-        {/* <div className="about__social">
-          <AiFillFacebook />
-          <AiFillTwitterCircle />
-          <AiOutlineInstagram />
-        </div> */}
       </article>
     </section>
   )
@@ -33,7 +25,7 @@ const query = graphql`
   {
     file(relativePath: { eq: "person.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 220) {
+        fluid(maxWidth: 158) {
           ...GatsbyImageSharpFluid
         }
       }

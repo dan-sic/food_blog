@@ -19,7 +19,10 @@ export const ArticleListItem: React.FunctionComponent<ArticleListItemProps> = ({
     <article className="article-list-item">
       <Image
         className="article-list-item__image"
-        fluid={image.childImageSharp.fluid}
+        fluid={{
+          ...image.childImageSharp.fluid,
+          sizes: "(min-width: 700px) 500px, 200px",
+        }}
       />
       <div className="article-list-item__data">
         <Link to={`${StaticRoutes.ARTICLES}/${slug}`}>

@@ -13,9 +13,17 @@ export const BannerArticleListItem: React.FunctionComponent<ArticleListItemProps
 }) => {
   const { title, image, publishDate, slug } = article
   return (
-    <Link to={`${StaticRoutes.ARTICLES}/${slug}`}>
+    <Link
+      aria-label={`Link to article: ${title}`}
+      to={`${StaticRoutes.ARTICLES}/${slug}`}
+    >
       <article className="banner-article-list-item">
-        <Image fluid={image.childImageSharp.fluid} />
+        <Image
+          fluid={{
+            ...image.childImageSharp.fluid,
+            sizes: "145px",
+          }}
+        />
         <div className="banner-article-list-item__data">
           <h5 className="banner-article-list-item__title">{title}</h5>
           <span className="banner-article-list-item__time">{publishDate}</span>

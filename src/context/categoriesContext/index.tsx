@@ -30,8 +30,8 @@ export const query = graphql`
         description
         categoryImage {
           childImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

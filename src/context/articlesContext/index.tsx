@@ -27,7 +27,7 @@ export const useArticles = () => {
 function createArticleSlug(articleTitle: string): string {
   return articleTitle.toLocaleLowerCase().replace(/\s/g, "-")
 }
-
+// 150, 350, 560, 1130
 export const query = graphql`
   {
     allStrapiArticle {
@@ -42,8 +42,8 @@ export const query = graphql`
         }
         image {
           childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
+            fluid(srcSetBreakpoints: [225, 550, 800, 850, 1700]) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
