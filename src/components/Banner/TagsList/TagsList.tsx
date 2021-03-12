@@ -7,7 +7,7 @@ import { useTags } from "../../../context/tagsContext"
 
 export const TagsList = () => {
   const dispatch = useArticlesFiltersDispatch()
-  const [tags] = useTags()
+  const tags = useTags()
 
   return (
     <section className="banner__section tags">

@@ -17,7 +17,7 @@ import { useTags } from "../../context/tagsContext"
 
 export const FilteredArticlesList = () => {
   const [categories] = useCategories()
-  const [tags] = useTags()
+  const tags = useTags()
   const [articles] = useArticles()
   const articlesFilters = useArticlesFiltersState()
   const dispatch = useArticlesFiltersDispatch()
