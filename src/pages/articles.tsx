@@ -6,10 +6,15 @@ import { Layout } from "../components/Layout/Layout"
 import { TagsList } from "../components/Banner/TagsList/TagsList"
 import { FilteredArticlesList } from "../components/FilteredArticlesList/FilteredArticlesList"
 import { ArticlesFiltersProvider } from "../context/articlesFiltersContext"
+import { SEO } from "../components/SEO/SEO"
 
 export default function Articles() {
   return (
     <Layout>
+      <SEO
+        title="Articles"
+        description="Find articles by title, category or tag"
+      />
       <WithBanner className="mt-md">
         <ArticlesFiltersProvider>
           <FilteredArticlesList />

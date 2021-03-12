@@ -10,6 +10,7 @@ import { About } from "../../components/Banner/About/About"
 import { BannerArticlesList } from "../../components/Banner/BannerArticlesList/BannerArticlesList"
 import { Subscribe } from "../../components/Banner/Subscribe/Subscribe"
 import { StaticRoutes } from "../../utils/constants/routes"
+import { SEO } from "../../components/SEO/SEO"
 
 export default ({ data }) => {
   const {
@@ -18,12 +19,16 @@ export default ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={article.title} />
       <WithBanner className="mt-md">
         <article className="article">
           <header className="article__header">
             <Image
               className="article__img"
-              fluid={article.image.childImageSharp.fluid}
+              fluid={{
+                ...article.image.childImageSharp.fluid,
+                sizes: "(min-width: 700px) 1100px, 300px",
+              }}
             />
             <div className="article__data">
               <h2 className="article__title">{article.title}</h2>

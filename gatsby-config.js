@@ -8,14 +8,16 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Food&Fun Blog",
-    description: "This is a food blog with a spuneful of fun",
+    description: "This is a food blog with a spoonful of fun",
     author: "@dandev",
-    // image: "/twitter-img.png",
-    // siteUrl: "",
+    twitterUsername: "@dandev",
+    image: "/site_img.jpeg",
+    siteUrl: "http://localhost:3000",
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
