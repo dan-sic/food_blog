@@ -20,13 +20,17 @@ export const Sidebar: React.FunctionComponent<SidebarProps> = ({
     <aside className={sidebarClasses}>
       <section className="section-center sidebar__section">
         <NavHeder logo={logoLarge}>
-          <button onClick={() => closeSidebar()} className="sidebar__close-btn">
+          <button
+            aria-label="Close sidebar"
+            onClick={() => closeSidebar()}
+            className="sidebar__close-btn"
+          >
             <AiOutlineClose />
           </button>
         </NavHeder>
-        <div>
+        <nav id="nav">
           <NavLinks className={"sidebar__nav-links"} />
-        </div>
+        </nav>
       </section>
     </aside>
   )

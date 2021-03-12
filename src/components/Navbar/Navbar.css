@@ -35,7 +35,7 @@
 }
 
 .navbar__menu-btn--primary {
-  color: var(--clr-primary-5);
+  color: var(--clr-primary-4);
 }
 
 .navbar__menu-btn--white {
@@ -43,15 +43,15 @@
 }
 
 .navbar__links--primary li a {
-  color: var(--clr-primary-5);
+  color: var(--clr-primary-4);
 }
 
 .navbar__links--primary li:hover {
-  border-bottom: 2px solid var(--clr-primary-5);
+  border-bottom: 2px solid var(--clr-primary-4);
 }
 
 .navbar__links--primary li.nav-links__active-link {
-  border-bottom: 3px solid var(--clr-primary-5);
+  border-bottom: 3px solid var(--clr-primary-4);
 }
 
 .navbar__links--white li a {

@@ -27,11 +27,11 @@
   display: flex;
   width: max-content;
   align-items: center;
-  color: var(--clr-grey-5);
+  color: var(--clr-grey-4);
 }
 
 .article__time svg {
-  color: var(--clr-grey-5);
+  color: var(--clr-grey-4);
   margin-right: 0.3rem;
 }
 

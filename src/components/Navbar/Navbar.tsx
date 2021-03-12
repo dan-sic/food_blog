@@ -22,6 +22,9 @@ export const Navbar: React.FunctionComponent<NavbarProps> = ({
         logo={navbarType === "primary" ? logoLargePrimary : logoLargeWhite}
       >
         <button
+          aria-label="Open sidebar"
+          aria-controls="nav"
+          aria-haspopup="true"
           onClick={() => openSidebar()}
           className={
             navbarType === "primary"

@@ -24,11 +24,11 @@ export const Subscribe = () => {
       <h4 className="banner__heading">Get new posts!</h4>
       <p>Subscribe to receive new posts each week</p>
       <form action="" onSubmit={e => onFormSubmit(e)} noValidate>
-        <label className="sr-only" htmlFor="email">
+        <label className="sr-only" htmlFor="sub-email">
           Email
         </label>
         <input
-          id="email"
+          id="sub-email"
           className="input"
           type="email"
           value={emailValue}

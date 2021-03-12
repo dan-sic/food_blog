@@ -15,13 +15,13 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({
 
   return (
     <>
-      <Navbar
-        navbarType={navbarType}
-        openSidebar={() => setIsSidebarOpen(true)}
-      />
       <Sidebar
         isOpen={isSidebarOpen}
         closeSidebar={() => setIsSidebarOpen(false)}
+      />
+      <Navbar
+        navbarType={navbarType}
+        openSidebar={() => setIsSidebarOpen(true)}
       />
       {children}
       <Footer />

@@ -41,14 +41,14 @@
   text-transform: uppercase;
   color: var(--clr-white);
   padding: 1rem;
-  background-color: var(--clr-primary-5);
+  background-color: var(--clr-primary-3);
   transition: all 0.2s;
   margin-top: 0.5rem;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: var(--clr-primary-3);
+  background-color: var(--clr-primary-5);
 }
 
 .page-heading {
