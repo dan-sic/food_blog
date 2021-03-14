@@ -119,6 +119,12 @@ const uploadContactForm = async (contactForm: ContactForm) => {
       emailSubject: "New message",
       emailText: `New message from ${name.value} (${email.value}): ${message.value}`,
     }),
+  }).then(res => {
+    if (res.status > 299) {
+      return Promise.reject()
+    } else {
+      return res
+    }
   })
 }
 

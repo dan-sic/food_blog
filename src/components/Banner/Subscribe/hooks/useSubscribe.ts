@@ -64,6 +64,12 @@ const makeSubscribeRequest = async (email: string) => {
       emailSubject: "New subscriber",
       emailText: `New subscriber: ${email}`,
     }),
+  }).then(res => {
+    if (res.status > 299) {
+      return Promise.reject()
+    } else {
+      return res
+    }
   })
 }
 
