@@ -21,6 +21,7 @@ export const ArticlesList: React.FunctionComponent<ArticlesListProps> = ({
         <span className="articles__empty">No articles found</span>
       ) : (
         articles
+          .sort(sortArticlesByDate)
           .slice(0, articlesDisplayed)
           .map(article => (
             <ArticleListItem key={article.id} article={article} />
@@ -41,4 +42,14 @@ export const ArticlesList: React.FunctionComponent<ArticlesListProps> = ({
       )}
     </div>
   )
+}
+
+function sortArticlesByDate(a1: Article, a2: Article): number {
+  if (a1.publishDate > a2.publishDate) {
+    return -1
+  } else if (a1.publishDate < a2.publishDate) {
+    return 1
+  } else {
+    return 0
+  }
 }
